@@ -1,0 +1,2 @@
+[0326/094345.835:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Acesso negado. (0x5)
+[0326/101047.700:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Acesso negado. (0x5)
