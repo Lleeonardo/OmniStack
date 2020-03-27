@@ -16,9 +16,9 @@ export default function Profile(){
     const ongId = localStorage.getItem('ongId');
 
     useEffect(()=>{
-        api.get(`profile`, {
+        api.get('profile', {
             headers:{
-                Authorization: ongId,
+                authorization: ongId,
             }
         }).then(res => {
             setIncidents(res.data);
@@ -27,10 +27,10 @@ export default function Profile(){
 
     async function handleDeleteIncident(id){
         try{
-            await api.delete(`incidents/${id}`,  {headers: {Authorization: ongId, }}
+            await api.delete("incidents/"+id,  {headers: {authorization: ongId }}
             );
 
-            setIncidents(incidents.filter(incident => incidents.id !== id));
+            setIncidents(incidents.filter(incident => incident.id !== id));
 
         }catch(err){
             alert("Caso não pôde ser deletado :(");

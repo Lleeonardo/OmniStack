@@ -8,10 +8,10 @@ module.exports = {
         const { page = 1 } = req.query;
         //Essa relação tá errada, vamo arrumar logo menos
         const incidents = await connection('incidents')
-                                .join('ONGS', 'ONGS.id', 'LIKE', 'incidents.ong_id')
+                                .join('ONGS', 'ONGS.id', '=', 'incidents.ong_id')
                                 .limit(5)
                                 .offset((page -1)* 5)
-                                .select(['incidents.*','ongs.name','ongs.email', 'ongs.whatsapp', 'ongs.city', 'ongs.uf']);
+                                .select(['incidents.*','ONGS.name','ONGS.email', 'ONGS.whatsapp', 'ONGS.city', 'ONGS.uf']);
         
         res.header('X-Total-Count', count['count(*)']);
 
